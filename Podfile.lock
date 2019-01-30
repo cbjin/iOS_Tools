@@ -1,0 +1,214 @@
+PODS:
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
+    - AFNetworking/NSURLSession
+  - DACircularProgress (2.3.1)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
+  - HexColors (2.2.1)
+  - iCarousel (1.8.3)
+  - IQKeyboardManager (5.0.8)
+  - JPFPSStatus (0.1.1)
+  - JSONModel (1.7.0)
+  - LBXAlertAction (1.1.1)
+  - LBXScan/LBXNative (2.3):
+    - LBXScan/Types (~> 2.2)
+  - LBXScan/LBXZBar (2.3):
+    - LBXScan/Types (~> 2.2)
+    - ZBarSDK (~> 1.3.1)
+  - LBXScan/LBXZXing (2.3):
+    - LBXScan/Types (~> 2.2)
+  - LBXScan/Types (2.3)
+  - LBXScan/UI (2.3):
+    - LBXScan/Types (~> 2.2)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.15.3)
+  - NinaPagerView (1.6.2)
+  - PNChart (0.8.9):
+    - UICountingLabel (~> 1.2.0)
+  - Reachability (3.2)
+  - Realm (3.3.0):
+    - Realm/Headers (= 3.3.0)
+  - Realm/Headers (3.3.0)
+  - RKNotificationHub (2.0.5)
+  - RongCloudIM/IMKit (2.9.8):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (2.9.8)
+  - SAMKeychain (1.5.3)
+  - SDCycleScrollView (1.75):
+    - SDWebImage (>= 4.0.0)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
+  - SVProgressHUD (2.2.5)
+  - Toast (4.0.0)
+  - TOCropViewController (2.4.0)
+  - TSMessages (0.9.12):
+    - HexColors (~> 2.2.0)
+  - UICountingLabel (1.2.0)
+  - WebViewJavascriptBridge (6.0.3)
+  - YTKNetwork (2.0.4):
+    - AFNetworking (~> 3.0)
+  - YYAsyncLayer (1.0)
+  - YYCache (1.0.4)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+  - YYDispatchQueuePool (1.0)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYKeyboardManager (1.0.1)
+  - YYModel (1.0.4)
+  - YYText (1.0.7)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
+  - ZBarSDK (1.3.1)
+
+DEPENDENCIES:
+  - AFNetworking
+  - DACircularProgress
+  - FMDB
+  - iCarousel
+  - IQKeyboardManager
+  - JPFPSStatus
+  - JSONModel
+  - LBXAlertAction
+  - LBXScan/LBXNative (~> 2.3)
+  - LBXScan/LBXZBar (~> 2.3)
+  - LBXScan/LBXZXing (~> 2.3)
+  - LBXScan/UI (~> 2.3)
+  - Masonry
+  - MBProgressHUD
+  - MJExtension
+  - MJRefresh
+  - NinaPagerView
+  - PNChart
+  - Reachability
+  - Realm
+  - RKNotificationHub
+  - RongCloudIM/IMKit (~> 2.9.0)
+  - RongCloudIM/IMLib (~> 2.9.0)
+  - SAMKeychain
+  - SDCycleScrollView
+  - SDWebImage
+  - SVProgressHUD
+  - Toast
+  - TOCropViewController
+  - TSMessages
+  - WebViewJavascriptBridge
+  - YTKNetwork
+  - YYAsyncLayer
+  - YYCache
+  - YYCategories
+  - YYDispatchQueuePool
+  - YYImage
+  - YYKeyboardManager
+  - YYModel
+  - YYText
+  - YYWebImage
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - DACircularProgress
+    - FMDB
+    - HexColors
+    - iCarousel
+    - IQKeyboardManager
+    - JPFPSStatus
+    - JSONModel
+    - LBXAlertAction
+    - LBXScan
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJRefresh
+    - NinaPagerView
+    - PNChart
+    - Reachability
+    - Realm
+    - RKNotificationHub
+    - RongCloudIM
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SVProgressHUD
+    - Toast
+    - TOCropViewController
+    - TSMessages
+    - UICountingLabel
+    - WebViewJavascriptBridge
+    - YTKNetwork
+    - YYAsyncLayer
+    - YYCache
+    - YYCategories
+    - YYDispatchQueuePool
+    - YYImage
+    - YYKeyboardManager
+    - YYModel
+    - YYText
+    - YYWebImage
+    - ZBarSDK
+
+SPEC CHECKSUMS:
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
+  JPFPSStatus: 03f32aa3d4d7d0c5bf56f6f3e7cf8b7280a5f52c
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  LBXAlertAction: d55188a2debb2bdd88b8d102c1c5552151c9014d
+  LBXScan: e51449f0832d1fe17da632af0d22adeb3cfa3543
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  NinaPagerView: d197b579cb5a9beb5c3cb45c027a7463de52e64f
+  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
+  RKNotificationHub: e926748820d719f21ff374657a47fceefa1796b4
+  RongCloudIM: dcfa8c4fe11e992c0d187f7dda71f2ce5bfae4d1
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  TOCropViewController: 368d8df3ea43b62c3dc5a61f11b9048274d240bd
+  TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+  YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
+  YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYDispatchQueuePool: 3dfb2274bcc74207688dde8ac6f7bdd46871dd7b
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+  ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
+
+PODFILE CHECKSUM: 1b7b4d32f76304acc1f690e8ab0783f5221b79ca
+
+COCOAPODS: 1.5.3
