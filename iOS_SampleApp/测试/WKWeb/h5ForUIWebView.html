@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        </head>
+<body>
+    
+    <div style="margin-top: 20px">
+        <h1>硬件能力扩展</h1>
+        <input type="button" value="定位服务" onclick="locationAction()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px;margin-left:10px; font-size: 40px;">
+            </div>
+    <div>
+        <input type="button" value="媒体库" onclick="imageAction()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left: 60%; margin-top: -50px; font-size: 40px;">
+            </div>
+    <div>
+        <input type="button" value="唤起相册" onclick="photoImageAction()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left:10px; font-size: 40px;">
+            </div>
+    <div>
+        <input type="button" value="唤起相机" onclick="camareImageAction()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left: 60%; margin-top: -50px; font-size: 40px;">
+            </div>
+    <div>
+        <input type="button" value="扫描二维码" onclick="scanAction()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left:10px; font-size: 40px;">
+            </div>
+    <div>
+        <input type="button" value="返回" onclick="backRWX()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left: 60%; margin-top: -50px; font-size: 40px;">
+            </div>
+<!--    <div>-->
+<!--        <input type="button" value="初始化对象" onclick="openSunriseAction()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left:10px; font-size: 40px;">-->
+<!--            </div>-->
+<!--    <div>-->
+<!--        <input type="button" value="显示列表" onclick="showList()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left: 60%; margin-top: -50px; font-size: 40px;">-->
+<!--            </div>-->
+<!--    <div>-->
+<!--        <input type="button" value="读二代证" onclick="readID()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left:10px; font-size: 40px;">-->
+<!--            </div>-->
+<!--    <div>-->
+<!--        <input type="button" value="IMSI" onclick="readIMSI()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left: 60%; margin-top: -50px; font-size: 40px;">-->
+<!--            </div>-->
+<!--    <div>-->
+<!--        <input type="button" value="MSG" onclick="readMSG()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left:10px; font-size: 40px;">-->
+<!--            </div>-->
+<!--    <div>-->
+<!--        <input type="button" value="ICCID" onclick="readICCID()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left: 60%; margin-top: -50px; font-size: 40px;">-->
+<!--            </div>-->
+<!--    <div>-->
+<!--        <input type="button" value="写卡" onclick="insertCard()" style="display:block; width: 35%; height: 60px; margin-bottom: 20px; margin-left:10px; font-size: 40px;">-->
+<!--            </div>-->
+<!--    <img id="test" width="50%" height="30%" src="?" />-->
+    
+<script type="text/javascript">
+    
+    
+    <!--返回任沃行               -->
+    function backRWX(){
+        back_unified_platform();
+    }
+    
+<!--定位服务-->
+<!--调用原生定位  必传参数-精确度   0 10 100 1000 3000 (说明:定位精确度范围0~3km,默认为100m)-->
+    function locationAction(){
+       
+        var jsonObj = {distance:"0"};
+        var jsonStr=JSON.stringify(jsonObj);
+        cucsi_BRegion.JSBStartLocate(jsonStr);
+    }
+<!--监听原生定位回调  获取定位信息-->
+    var JSBGetLocationInfo = function(info)
+   {
+    setTimeout(function(){
+               alert('位置:'+info);
+           },2000)
+   }
+
+<!--调用相机相册-->
+<!--调用原生相机／相册 必传参数类型与图片压缩率          -->
+<!--  类型 0:sheet,两种自由选择 1:相册 2:相机        -->
+<!--  图片压缩率  0.1~1 返回图片的压缩率,默认0.9      -->
+
+<!--媒体库-->
+    function imageAction(){
+
+       var jsonObj = {imageSource:"0",imageCompressionRatio:"0.5"};
+       var jsonStr=JSON.stringify(jsonObj);
+       cucsi_BRegion.JSBImageSource(jsonStr);
+   }
+<!--相册-->
+    function photoImageAction(){
+    
+    var jsonObj = {imageSource:"1",imageCompressionRatio:"0.5"};
+       var jsonStr=JSON.stringify(jsonObj);
+       cucsi_BRegion.JSBImageSource(jsonStr);
+    }
+<!--相机-->
+    function camareImageAction(){
+    
+       var jsonObj = {imageSource:"2",imageCompressionRatio:"0.5"};
+       var jsonStr=JSON.stringify(jsonObj);
+       cucsi_BRegion.JSBImageSource(jsonStr);
+}
+
+<!--监听获取图片回调  获取图片base64信息-->
+    var JSBGetImageInfo = function(info)
+    {
+        setTimeout(function(){
+               alert('获取本地图片'+info);
+               },2000)
+    }
+
+<!--扫描二维码-->
+    function scanAction(){
+         cucsi_BRegion.JSBScanQRCode();
+    }
+<!--监听二维码回调-->
+    var JSBGetQRCodeResultInfo = function(info)
+    {
+         setTimeout(function(){
+               alert('二维码:'+info);
+               },2000)
+    }
+
+<!--MARK - 更新标注-->
+<!--本次更新内容：-->
+<!--1.传参统一化-->
+<!--为方便处理，传递参数统一为jsonStr-->
+<!--2.URL／base64 图片类型扩展-->
+<!--通过imageType，区分图片是链接还base64串。并通过一一对应关系传参数，URL-imageUrl  base64-imageForBase64-->
+<!--3.增添会话标识-->
+<!--由于图片写入可能存在多个触发点，导致无法区分回调参数来自那个点击事件。特增加参数BRegionActionID，该参数为自定义非必传参数。如果传递，任沃行将在回调中增添该参数（传入什么，回调中传回什么）。-->
+<!--微信分享等需要等任沃行完成操作后再回调的方法该参数不适用。H5方可通过自定义全局变量区分回调来源，即触发一次分享后该页面跳转到微信，收到回调再进行下传分享操作。-->
+<!--4.部分内部代码优化-->
+<!--5.分享到朋友圈，无法停留在微信问题。-->
+<!--不适用，其他应用也是分享成功后直接返回，只有分享给好友才能选择留在微信。-->
+
+
+
+
+<!--保存图片到本地-->
+    function saveImageToLocal(){
+        var jsonObj = {imageUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531730522059&di=c9bb87e41e4b2f9e66ade0718aff28ee&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F9358d109b3de9c821370156d6081800a19d8433f.jpg",imageType:"URL"};
+        <!--        var jsonObj = {imageForBase64:"图片base64",imageType:"base64",BRegionActionID:"saveImageAction1"};-->
+        var jsonStr = JSON.stringify(jsonObj);
+        cucsi_BRegion.JSBSaveToLocal(jsonStr);
+    }
+<!--监听图片写入回调-->
+    var JSBGetSaveLocalResult = function(info)
+   {
+      setTimeout(function(){
+               alert('保存图片:'+info);
+               },2000)
+   }
+
+<!--分享图片-->
+   function shareImage(){
+        var jsonObj = {imageUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531730522059&di=c9bb87e41e4b2f9e66ade0718aff28ee&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F9358d109b3de9c821370156d6081800a19d8433f.jpg",imageType:"URL",shareType:"0"};
+        var jsonStr=JSON.stringify(jsonObj);
+        cucsi_BRegion.JSBShareImage(jsonStr);
+   }
+   var JSBGetShareImageResult = function(info)
+   {
+       setTimeout(function(){
+                  alert('图片分享结果:'+info);
+                  },2000)
+   }
+
+<!--分享链接-->
+   function shareUrl(){
+       var jsonObj = {imageUrl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531730522059&di=c9bb87e41e4b2f9e66ade0718aff28ee&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F9358d109b3de9c821370156d6081800a19d8433f.jpg",imageType:"URL",shareType:"0",shareUrl:"http://baidu.com",shareDesc:"分享的百度链接",shareTitle:"百度真牛"};
+       var jsonStr=JSON.stringify(jsonObj);
+       cucsi_BRegion.JSBShareUrl(jsonStr);
+   }
+   var JSBGetShareUrlResult = function(info)
+   {
+       var json = JSON.parse(info);
+       setTimeout(function(){
+               alert('URL分享结果:'+json.respDesc);
+               },2000)
+   }
+
+   function openSunriseAction(){
+       cucsi_BRegion.JSBInitSDK();
+   }
+
+   function showList(){
+       cucsi_BRegion.JSBShowDeviceList();
+   }
+   var JSBGetDeviceInfo = function(info)
+   {
+       var json = JSON.parse(info);
+       setTimeout(function(){
+               alert('当前设备信息:'+info);
+               },2000)
+   }
+    function readID(){
+       cucsi_BRegion.JSBReadID();
+   }
+
+   var JSBGetIDInfo = function(info)
+   {
+      var json = JSON.parse(info);
+      setTimeout(function(){
+               alert('当前扫描结果:'+ info);
+               },2000)
+   }
+   var JSBGetErrorInfo = function(info)
+   {
+      var json = JSON.parse(info);
+      setTimeout(function(){
+               alert('读取身份证失败:'+json.respDesc);
+               },2000)
+   }
+
+
+        </script>
+</body>
+</html>
+

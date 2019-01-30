@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>appUI</key>
+	<array>
+		<string>Label</string>
+		<string>Button</string>
+		<string>TextField</string>
+		<string>Segmented Control</string>
+		<string>Slider</string>
+		<string>Switch</string>
+		<string>Activity Indicator View</string>
+		<string>Progress View</string>
+		<string>Page Control</string>
+		<string>Stepper</string>
+		<string>Text View</string>
+		<string>Scroll View</string>
+		<string>Date Picker</string>
+		<string>Picker View</string>
+		<string>Table View</string>
+		<string>Collection View</string>
+		<string>Search Bar</string>
+		<string>Tab Bar</string>
+	</array>
+</dict>
+</plist>

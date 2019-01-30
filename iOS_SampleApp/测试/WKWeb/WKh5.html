@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        </head>
+<body>
+    
+    <div id="app">
+        <div onclick="diaoIos()" style="font-size:50px;margin:100px 100px 100px 100px;height:100px;width:50%">ios按钮</div>
+        <span id="anniu"></span>
+        <div onclick="diaoAndroid()" style="font-size:50px;margin:100px 100px 100px 100px;height:100px;width:50%">安卓按钮</div>
+        <span  id="anniu2"></span>
+    </div>
+    
+    <!-- <script src="node_modules/vue/dist/vue.min.js"></script> -->
+    <script>
+        function diaoAndroid() {
+            var result = window.android.back({title:"测试标题",content:"测试分享",url:"html://www.baidu.com"});
+            document.getElementById("anniu2").innerHTML=result;
+        }
+    function diaoIos() {
+        var results2 = window.webkit.messageHandlers.Share.postMessage({title:"测试标题",content:"测试分享",url:"html://www.baidu.com"});
+        document.getElementById("anniu").innerHTML=result2;
+    }
+    function alertAction(message) {
+        var json = JSON.parse(message);
+        alert(message);
+    }
+        </script>
+</body>
+</html>
+
