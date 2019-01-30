@@ -152,6 +152,7 @@
     }
 }
 
+
 - (LBXScanViewStyle *)setUP {
     //设置扫码区域参数
     LBXScanViewStyle *style = [[LBXScanViewStyle alloc]init];
